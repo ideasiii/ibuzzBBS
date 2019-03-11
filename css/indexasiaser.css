@@ -1,0 +1,73 @@
+body {
+	background-color: #D3D5D6;
+	background-image: url(../images/bg.png);
+	background-repeat: repeat-y;
+	background-position: center 10px;
+	font-family:"微軟正黑體", "Microsoft JhengHei";
+	color: #333;
+}
+.clear {
+	clear: both;
+	
+}
+#main {
+	background-image: url(../images/decoline.png);
+	background-repeat: repeat-y;
+	padding-left: 30px;
+	padding-top: 20px;
+	min-height:600px;
+	background-position: 6px 0px;
+}
+#wrapper {
+	width: 860px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+}
+#footer {
+	background-color: #EAEAEA;
+	padding-top: 24px;
+	padding-right: 20px;
+	padding-bottom: 24px;
+	padding-left: 20px;
+	font-size: 12px;
+	color: #C15C1A;
+}
+
+
+#menu {
+	margin-top: 20px;
+	z-index: 999;
+}
+.formframe {
+	width: 85%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFE5D4;
+	border: 1px solid #999;
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	list-style-type: circle;
+}
+.formframe li {
+	padding-bottom: 6px;
+}
+
+#main h2 {
+	font-weight: bold;
+	padding-left: 34px;
+}
+#main h2::before{
+	content:url(../images/dot.png);
+	}
+#main .btnposition {
+	float: right;
+	margin-right: 30px;
+	margin-top: 10px;
+}

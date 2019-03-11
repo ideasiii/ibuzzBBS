@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ibuzz"
+  id="myeclipse.1351135775377"
+  context-root="/ibuzz_beta"
+  j2ee-spec="6.0"
+  archive="ibuzz.war">
+  <attributes>
+    <attribute name="webrootdir" value="&lt;prjroot&gt;" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,145 @@
+a {
+	color: #333;
+}
+#nav {
+	line-height: 50%;
+	padding-top: 4px;
+	padding-right: 6px;
+	padding-bottom: 0px;
+	padding-left: 26px;
+	margin: 0;
+	background-color: #999;
+	/*background-image: url(img/gradient.png); 20130128 huating*/
+	background-repeat: repeat-x;
+	background-position: 0 -110px;
+	z-index: 999;
+}
+
+#nav li {
+	float: left;
+	position: relative;
+	list-style: none;
+	margin-top: 0;
+	margin-right: 5px;
+	margin-bottom: 0;
+	margin-left: 5px;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 4px;
+	padding-left: 0;
+}
+
+
+/* main level link */
+#nav a {
+	font-weight: bold;
+	color: #e7e5e5;
+	text-decoration: none;
+	display: block;
+	padding:  8px 20px;
+	margin: 0;
+	/*border-top: solid 1px  #7d7d7d; */
+
+	
+}
+
+#nav a:hover {
+	background: #000;
+	color: #fff;
+}
+
+/* main level link hover */
+#nav .current a, #nav li:hover > a {
+	color: #FFF;
+	/*border-top: solid 1px #f8f8f8;*/
+	background-color: #999;
+	/*background-image: url(img/gradient.png); 20130128*/
+	background-repeat: repeat-x;
+	background-position: 0 -40px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #C15C1A;
+}
+
+/* sub levels link hover */
+#nav ul li:hover a, #nav li:hover li a {
+	background: none;
+	border: none;
+	color: #666;
+
+	
+}
+#nav ul a:hover {
+	background: #C15C1A /*url(../images/gradient3.png) repeat-x 0 -100px !important 20130128*/;
+	color: #fff !important;
+}
+
+/* dropdown */
+#nav li:hover > ul {
+	display: block;
+}
+
+/* level 2 list */
+#nav ul {
+	display: none;
+	padding: 0;
+	/*width: 185px;*/
+	width:210px;
+	position: absolute;
+	top: 28px;
+	left: 0;
+	border: solid 1px #b4b4b4;
+	background-color: #ddd;
+	background-position: 0 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;	
+}
+#nav ul li {
+	float: none;
+	margin: 0;
+	padding: 0;
+	line-height: 16px;
+	font-size: 0.9em;
+}
+
+#nav ul a {
+	font-weight: normal;
+	text-shadow: 0 1px 0 #fff;
+	background-color:#09F;
+}
+
+/* level 3+ list */
+#nav ul ul {
+	left: 181px;
+	top: -1px;
+}
+
+/* rounded corners of first and last link */
+#nav ul li:first-child > a {
+	
+}
+#nav ul li:last-child > a {
+	
+}
+
+/* clearfix */
+#nav:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#nav {
+	display: inline-block;
+} 
+html[xmlns] #nav {
+	display: block;
+}
+ 
+* html #nav {
+	height: 1%;
+}

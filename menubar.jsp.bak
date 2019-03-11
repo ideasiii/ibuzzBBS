@@ -1,0 +1,38 @@
+﻿<div id="header"><img src="images/logo.gif" width="260" height="28" /></div>
+<div id="menu" style="position:relative;z-index:999">
+	<ul id="nav">
+			<li ><a href="#">首頁</a></li>
+			<li><a href="#">設定版塊來源</a>
+				<ul>
+					<li><a href="source_add_bbs.jsp">PTT</a></li>
+			  <li><a href="source_add_fb.jsp">Facebook</a></li>
+			</ul>
+		  </li>
+			<li><a href="#">設定擷取關鍵字</a>
+				<ul>
+					<li><a href="keyword_add_fb.jsp">Facebook關鍵字</a></li>
+					<li><a href="#">Plurk關鍵字</a></li>
+				</ul>
+			</li>
+			<li><a href="#">固定報表</a>
+				<ul>
+				<li><a href="export_bbs_board.jsp">PTT電子報</a></li>
+				<li><a href="export_fb_page.jsp">FB官方粉絲頁監測報表(含上月比較)</a></li>
+				<li><a href="export_fb_keyword.jsp?export_type=2">FB廣大搜尋報表</a></li>
+				<li><a href="export_fb_keyword.jsp?export_type=3">FB日報表</a></li>
+				<li><a href="export_fb_rank.jsp">FB排行榜</a></li>
+				<li><a href="export_fb_keyword.jsp?export_type=4">FB關鍵字搜尋</a></li>
+				<li><a href="export_bbs_keyword.jsp">PTT關鍵字搜尋</a></li>
+				<li><a href="#">Plurk關鍵字搜尋</a></li>
+			 </ul></li>		
+
+			<li><a href="#">單次報表</a>
+				<ul>
+				<li><a href="export_fb_page_single.jsp">FB官方粉絲頁監測報表(含上月比較)</a></li>
+				<li><a href="export_fb_keyword_single.jsp?export_type=2">FB廣大搜尋報表</a></li>
+					<li><a href="export_fb_keyword_single.jsp?export_type=3">FB日報表</a></li>
+			  </ul>
+		   </li>
+		</ul>
+</div>
+<div style="clear:left"></div>
