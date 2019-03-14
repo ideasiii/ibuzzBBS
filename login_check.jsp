@@ -15,10 +15,15 @@ String projectID="";
 if(!account.equals("") && !pw.equals("")){
 	JSONObject check_result = srv.checkLoginAccount(account, pw,remoteAddr);
 	checkResult = check_result.getBoolean("isLogin");
-}
+	System.out.println(new Boolean(checkResult));
 
+	if (!checkResult) {
+		response.sendRedirect("login.html");
+	}
+}
 session.setAttribute( "isLoginTag", checkResult );
 session.setAttribute( "account", account );
 session.setAttribute( "password", pw );
 %>
-<%=new Boolean(checkResult).toString()%>
+
+<%=new Boolean(checkResult).toString()%> 
