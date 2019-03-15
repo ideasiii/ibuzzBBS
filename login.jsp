@@ -59,6 +59,27 @@
 
     </style>
 <script type="text/javascript">
+function post(path, params, method) {
+    method = method || "post"; 
+
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
 
 function xmlhttpPost_loginCheck(){
 		var account = document.getElementById('account_txtField').value;
@@ -66,7 +87,8 @@ function xmlhttpPost_loginCheck(){
 		if(account=="" || pw ==""){
 			document.getElementById('error_msg_field').innerHTML= "您輸入的帳號或密碼錯誤";
 		}else{
-			$.post('login_check.jsp', {'account':account,'pw':pw},
+			post('login_check.jsp', {account: 'account', pw : 'pw'}),
+			//$.post('login_check.jsp', {'account':account,'pw':pw},
 					function(result) {
 						if(escape(result)!="%0D%0A"){
 							result = trim(result);
