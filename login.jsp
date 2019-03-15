@@ -59,20 +59,14 @@
 
     </style>
 <script type="text/javascript">
-var uuid = uuid();
-function uuid() {
-	function s4() {
-		return Math.floor((1+Math.random())*0x10000).toString(16).substring(1);
-	}
-	return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() +s4() +s4();
-}
+
 function xmlhttpPost_loginCheck(){
 		var account = document.getElementById('account_txtField').value;
 		var pw = document.getElementById('pw_txtField').value;
 		if(account=="" || pw ==""){
 			document.getElementById('error_msg_field').innerHTML= "您輸入的帳號或密碼錯誤";
 		}else{
-			$.post('login_check.jsp', {'account':account,'pw':pw,'uuid':uuid},
+			$.post('login_check.jsp', {'account':account,'pw':pw},
 					function(result) {
 						if(escape(result)!="%0D%0A"){
 							result = trim(result);
