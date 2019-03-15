@@ -18,7 +18,7 @@ if(!account.equals("") && !pw.equals("")){
 	System.out.println(new Boolean(checkResult));
 
 	if (!checkResult) {
-		response.sendRedirect("login.html");
+		response.sendRedirect("login.jsp");
 	}
 }
 session.setAttribute( "isLoginTag", checkResult );
