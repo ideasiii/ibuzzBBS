@@ -1,14 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="BIG5"%>
 <%
-//String path = request.getContextPath();
-//String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-   <!-- <base href="<%=//basePath%>">-->
-    <base href="http://autoser.ideas.iii.org.tw/ibuzz/login.jsp">
+ <base href="<%=basePath%>">
+  
     
     <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
@@ -22,6 +22,7 @@
   </head>
   
   <body>
-    This is my JSP page. <br>
+    This is my JSP page. <br> 
+    <%= basePath%>
   </body>
 </html>
