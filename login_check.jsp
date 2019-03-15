@@ -13,7 +13,7 @@ boolean checkResult = false;
 String authority ="";
 String projectID="";
 if(!account.equals("") && !pw.equals("")){
-	JSONObject check_result = srv.checkLoginAccount(account, pw,remoteAddr);
+	JSONObject check_result = srv.checkLoginAccount(account, pw,remoteAddr);  
 	checkResult = check_result.getBoolean("isLogin");
 	System.out.println(new Boolean(checkResult));
 
