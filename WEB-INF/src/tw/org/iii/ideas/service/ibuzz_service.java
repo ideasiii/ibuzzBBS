@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,6 +14,57 @@ import org.json.JSONObject;
 import tw.org.iii.ideas.log.LogGenerator;
 
 public class ibuzz_service extends MyService{
+	private SimpleDateFormat filename_time_format = new SimpleDateFormat("yyyy-MM-dd_HHmmss");
+	private SimpleDateFormat full_time_format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	
+	public JSONObject checkLoginAccount(String account, String pw,String remoteAddr){
+		JSONObject loginObject = new JSONObject();
+		try {
+			Connection analysis_conn = getDBConn();
+			
+			Calendar current = Calendar.getInstance();
+			//login record
+			Statement statement = analysis_conn.createStatement();
+			String dataSql ="";
+		    dataSql = "INSERT INTO "
+					+ "login_log ("
+					+ "account, password, login_time, ip) VALUES ("
+					+ "'" + account + "','" + pw+ "', '"+full_time_format.format(current.getTime())+"'," +
+							"'"+remoteAddr+"' )";
+		    
+			statement.executeUpdate(dataSql);
+			
+			String sql = "SELECT * from login_account where account='"+account+"'";
+		//	System.out.println("checkLoginAccount="+sql);
+			 PreparedStatement ps = analysis_conn.prepareStatement(sql);
+			 ResultSet dataRS;
+			 dataRS = ps.executeQuery();
+			 String realPW="";
+			 if(dataRS.next()) {
+				 realPW = dataRS.getString("password");
+			 }
+			 if(pw.equals(realPW)){
+				 loginObject.put("isLogin", true);
+			 }else{
+				 loginObject.put("isLogin", false);
+			 }
+			 if(dataRS != null){
+				dataRS.close();
+				dataRS = null;
+			 }
+			 ps.close();
+			 ps=null;
+			 statement.close();
+			 statement = null;
+			 analysis_conn.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	//	System.out.println("isLogin="+projectID);
+		return loginObject;
+	}
+	
 	public int getSettingsCount(String dbname, Vector<String> conditionFieldVector,Vector<String> conditionFieldValue){
 		int count = 0;
 		try {
